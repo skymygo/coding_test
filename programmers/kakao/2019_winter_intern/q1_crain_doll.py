@@ -18,6 +18,7 @@ def solution(board, moves):
             dolls.pop()
         else:
             dolls.append(doll)
+            
     return answer*2
 
 if __name__ == '__main__':
