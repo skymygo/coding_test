@@ -1,23 +1,27 @@
 from itertools import groupby
+from collections import Counter
+
 def solution(words, queries):
-    words.sort(key=lambda x : len(x))
-    words = {k:list(g) for k,g in groupby(words, len)}
+    words.sort(key=lambda x: len(x))
+    words = {k: list(g) for k, g in groupby(words, len)}
     answer = list()
 
     for query in queries:
         equal_len_words = words.get(len(query), list())
         key_words = query.split("?")
 
-        if query == "?"*len(query):
+        if query == "?" * len(query):
             answer.append(len(equal_len_words))
+            continue
         elif query[0] == "?":
             keyword = key_words[-1]
-            match_words = [word for word in equal_len_words if word.endswith(keyword)]
+            equal_len_words = [word[-len(keyword):] for word in equal_len_words]
         else:
             keyword = key_words[0]
-            match_words = [word for word in equal_len_words if word.startswith(keyword)]
+            equal_len_words = [word[:len(keyword)] for word in equal_len_words]
 
-        answer.append(len(match_words))
+        count = Counter(equal_len_words)
+        answer.append(count.get(keyword, 0))
 
     return answer
 

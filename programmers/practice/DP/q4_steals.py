@@ -14,13 +14,8 @@ def solution(money):
 if __name__ == '__main__':
     input = [[1, 2, 3, 1],[1, 1, 4, 1, 4], [1000, 0, 0, 1000, 0, 0, 1000, 0, 0, 1000], [1000, 1, 0, 1, 2, 1000, 0], [1000, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 1000]]
     output = [4, 8, 3000, 2001, 2000]
-
-    # print(solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 30)
-    # print(solution([0, 0, 0, 0, 100, 0, 0, 100, 0, 0, 1, 1]), 201)
-    # print(solution([11, 0, 2, 5, 100, 100, 85, 1]), 198)
-    # print(solution([1, 2, 3]), 3)
-    # print(solution([91, 90, 5, 7, 5, 7]), 104)
-    # print(solution([90, 0, 0, 95, 1, 1]), 185)
+    input = [[14, 6, 5, 11, 3, 9, 2, 10], [1, 3, 2, 5, 4]]
+    output = [36,8]
 
     for _input, _output in zip(input, output):
         pred = solution(_input)
