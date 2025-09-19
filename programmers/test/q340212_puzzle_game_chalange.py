@@ -33,4 +33,5 @@ def solution_binary(diffs, times, limit):
     return max_level
 
 
+
 print(solution_binary([1, 4, 4, 2], [6, 3, 8, 2], 59))
